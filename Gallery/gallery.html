@@ -1,15 +1,31 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>Image Gallery</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="gallery.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
+
+	<style type="text/css">
+		.image {
+		  width: 100%;
+		  height: 240px;
+		  background-size: cover;
+		  background-position: center;
+		}
+
+		.flex {
+		  display: flex;
+		  flex-wrap: wrap;
+		}
+	</style>
 
 </head>
 <body>
 
 	<!-- Nav Bar -->
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
@@ -18,7 +34,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			     </button>
-				<a href="#" class="navbar-brand">IMGS</a>
+				<a href="#" class="navbar-brand"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Images</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-nav-demo">
 				<ul class="nav navbar-nav">
@@ -33,60 +49,59 @@
 		</div>
 	</nav>
 
+
 	<div class="container">
 		<div class="jumbotron">
-			<h1>The Image Gallery</h1>
+			<h1><i class="fas fa-camera-retro"></i> The Image Gallery</h1>
+			<p>This is an image gallery dedicated to space photography</p>
 		</div>
 
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="thumbnail">
+		<!-- Grid System -->
+		<div class="row flex">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1498026474556-93048b8493d8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=9eb76908291cfabf36823bfae16ef91f">
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1483030096298-4ca126b58199?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=3af74828391d2125ba02b919d8416e24">
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=cd4fa475e9697311d179df693dfefefc">
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1446776858070-70c3d5ed6758?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=4d43990677032eafd240f8f3a94a1bb5">
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1504333638930-c8787321eee0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=5b1e12d2b0b556530f3744c6b3477d21">
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=946edc0103ab76dddbfb2e5c9bfdff24">
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=79913213dbbbc86216997b3b23f6f570">
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=4e891a85b5fdb3b46172a42b2ccf2376">
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="thumbnail">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="thumbnail image">
 					<img src="https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=a1723b0ba5a326827f4f8f192c84cba3">
 				</div>
 			</div>
@@ -95,12 +110,7 @@
 	</div>
 
 
-
-
-
-
-
-	
+ 	
 
 	<!-- Javascript scripts -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
