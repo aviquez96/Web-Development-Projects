@@ -1,5 +1,10 @@
-<h1>You fell in love with: <%= thingVar %> </h1>
-<% if(thingVar.toLowerCase() === "rusty") { %>
-    <p>Good choice </p>      
-<% } %>
-<p>This is the ejs.file</p>
+<!-- partials are a way to make repetitve code a template for others to use -->
+<% include partials/header.ejs%>
+
+    <h1>You fell in love with: <%= thingVar %> </h1>
+    <% if(thingVar.toLowerCase() === "rusty") { %>
+        <p>Good choice </p>      
+    <% } %>
+    <p>This is the ejs.file</p>
+
+<% include partials/footer.ejs%>

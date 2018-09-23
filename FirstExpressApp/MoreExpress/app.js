@@ -2,6 +2,11 @@ var express = require("express");
 var app = express();
 var port = 3000;
 
+// This allows express to know it can access files from the public directory
+app.use(express.static(__dirname + "/public"));
+
+console.log(__dirname)
+
 app.get("/", function(req,res){
     res.render("home.ejs");
 })
@@ -16,7 +21,7 @@ app.get("/posts", function(req,res){
         {title: "Post 1", author: "Susy"},
         {title: "Post 2", author: "Ryan"},
         {title: "Post 3", author: "Karl"}
-    ]
+    ];
     res.render("posts.ejs", {posts: posts})
 })
 
