@@ -13,7 +13,7 @@ app.get('/friends', function(req,res){
 })
 
 app.post('/addfriend', function(req, res){
-    res.send("You have reached the post route");
+    res.send("You have reached the post routee");
 })
 
 app.listen(port,console.log("Server is running!"));
