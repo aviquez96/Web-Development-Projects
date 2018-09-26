@@ -25,4 +25,4 @@ app.post('/addfriend', function(req, res){
     res.redirect("/friends");
 })
 
-app.listen(port,console.log("Server is running!!!"));
+app.listen(port,console.log("Server is running!!!!"));
