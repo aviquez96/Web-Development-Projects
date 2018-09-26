@@ -26,3 +26,5 @@ app.post('/addfriend', function(req, res){
 })
 
 app.listen(port,console.log("Server is running!!!!"));
+
+// This is a try to utilize 'lazygit' function in terminal
