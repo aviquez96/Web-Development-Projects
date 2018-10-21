@@ -13,6 +13,7 @@ var app = express();
 app.set('view engine', 'ejs')
 mongoose.connect("mongodb://localhost/auth_demo_app", { useNewUrlParser: true });
 
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(require('express-session')({
     secret: "This is the secretest password ever llez",
     resave: false,
@@ -36,13 +37,21 @@ app.get('/secret', function (req, res) {
 })
 
 // AUTH ROUTES
-
 app.get('/register', function(req, res) {
-    if (err) {
-        console.log(err);
-    } else {
-        res.render('register');
-    }
+    res.render("register");
+})
+
+app.post('/register', function(req, res) {
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            return res.render('register');
+        } else {
+            passport.authenticate("local")(req, res, function() {
+                res.redirect('/secret');
+            })
+        }
+    });
 })
 
 app.listen(port, console.log("Server is running"))
