@@ -21,10 +21,11 @@ app.use(require('express-session')({
 // These initialize the passport library
 app.use(passport.initialize());
 app.use(passport.session());
-// These methods are responsible for reading the session, decoding and encoding it
+// These methods are responsible for reading the session, decoding and encoding it. 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// ROUTES
 
 app.get('/', function(req, res) {
     res.render("home");
@@ -32,6 +33,16 @@ app.get('/', function(req, res) {
 
 app.get('/secret', function (req, res) {
     res.render("secret");
+})
+
+// AUTH ROUTES
+
+app.get('/register', function(req, res) {
+    if (err) {
+        console.log(err);
+    } else {
+        res.render('register');
+    }
 })
 
 app.listen(port, console.log("Server is running"))
