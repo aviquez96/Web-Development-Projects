@@ -33,7 +33,8 @@ app.get('/', function(req, res) {
     res.render("home");
 })
 
-app.get('/secret', function (req, res) {
+// isLoggedIn is the middleware that will get excecuted before the callback is
+app.get('/secret', isLoggedIn, function (req, res) {
     res.render("secret");
 })
 
@@ -61,10 +62,24 @@ app.get('/login', function(req,res) {
 
 // Middleware: code that runs before the final route callback 
 app.post('/login', passport.authenticate("local", {
-    succesRedirect: "/secret",
+    successRedirect: "/secret",
     failureRedirect: "/login"
 }), function(req,res) {
     
 })
+
+app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+})
+
+// Next is what happens after the middleware (in this case, the callback belonging to the .get('/secret') route)
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        // If the user is logged in, keep going, move along
+        return next();
+    } 
+    res.redirect("/login");
+}
 
 app.listen(port, console.log("Server is running"))
