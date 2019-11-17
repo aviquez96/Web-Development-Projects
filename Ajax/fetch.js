@@ -49,3 +49,44 @@ fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
 //   }
 //   return request;
 // }
+
+//Usng fetch!
+// let btn = document.querySelector("#btn");
+// let fullnameDisplay = document.querySelector("#fullname");
+// let avatar = document.querySelector("#avatar");
+// let username = document.querySelector("#username");
+// var city = document.querySelector("#city");
+// var email = document.querySelector("#email");
+
+// btn.addEventListener("click", function() {
+//   let url = 'https://randomuser.me/api/';
+//   fetch(url)
+//   .then(handleErrors)
+//   .then(parseJSON)
+//   .then(updateProfile)
+//   .catch(function(err){
+//     console.log(err);
+//   })
+// })
+
+// function parseJSON (res) {
+//   return res.json().then(function(parsedData){
+//     return parsedData.results[0];
+//   })
+// }
+
+// function updateProfile (data) {
+//   let fullname = data.name.first + " " + data.name.last;
+//   fullnameDisplay.innerText = fullname;
+//   avatar.src = data.picture.medium;
+//   username.innerText = data.login.username;
+//   city.innerText = data.location.city;
+//   email.innerText = data.email;
+// }
+
+// function handleErrors (request) {
+//   if(!request.ok) {
+//     throw Error("Erroooor");
+//   }
+//   return request;
+// }
