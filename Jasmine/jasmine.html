@@ -19,8 +19,12 @@ let earth = {
 }
 
 describe("Earth", function() {
+    //If you have to rewrite a reusable variable throughout, you declare it here and initialize it inside a beforeEach callback
+    //You can also do the same for things that need to be reset or adjusted after each test case adjusting the value inside an afterEach callback
+    //You can nest describes inside describes
     it("is round", function() {
         //ToBe is a matcher --> a function that we attach to the expect function
+        //toBe (===), not.ToBe, tobeCloseTo, toBeDefined, toBeFalsey/toBeTruthy, toBeGreatherThan/toBeLessThan, toContain. toEqual (==), jasmine.any() --> checks the type
         expect(earth.isRound).toBe(true);
     });
     it("is the third planet from the sun", function() {
