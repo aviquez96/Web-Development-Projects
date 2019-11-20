@@ -18,8 +18,24 @@ let earth = {
     numberFromSun: 3
 }
 
+function add(a,b,c) {
+    return a+b+c;
+}
+
 describe("Earth", function() {
     //If you have to rewrite a reusable variable throughout, you declare it here and initialize it inside a beforeEach callback
+    let addSpy, result;
+    beforeEach(function() {
+        addSpy = spyOn(window, 'add').and.callThrough();
+        result = addSpy(1,2,3);
+        //Another
+        sample = jasmine.createSpy("sampleFunction");
+        jasmine.clock().install;
+    })
+
+    afterEach(function() {
+        jasmine.clock().uninstall();
+    })
     //You can also do the same for things that need to be reset or adjusted after each test case adjusting the value inside an afterEach callback
     //You can nest describes inside describes
     it("is round", function() {
@@ -29,6 +45,23 @@ describe("Earth", function() {
     });
     it("is the third planet from the sun", function() {
         expect(earth.numberFromSun).toBe(3);
+    })
+    //Spies make a fake object of a function you want to test
+    .it("testing the spy", function() {
+        expect(addSpy.calls.any()).toBe(true);
+        expect(addSpy.calls.count()).toBe(1);
+        expect(result).toEqual(6);
+    })
+    //Testing clock
+    it("is only invoked after 1000 milliseconds", function() {
+        //Same with setInterval
+        setTimeout(function() {
+            sample();
+        }, 1000);
+        jasmine.clock().tick(999);
+        expect(sample).not.toHaveBeenCalled();
+        jasmine.clock().tick(1);
+        expect(sample).toHaveBeenCalled();
     })
 })
 
